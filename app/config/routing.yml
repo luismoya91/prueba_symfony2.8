@@ -1,0 +1,12 @@
+acme_prueba:
+    resource: "@AcmePruebaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+index:
+    path: /
+    defaults: {_controller: AcmePruebaBundle:Default:index.html.twig}

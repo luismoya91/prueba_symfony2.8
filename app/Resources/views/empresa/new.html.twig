@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Creación Empresa</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input style="margin-top: 10px;" class="btn btn-success" type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+            <a href="{{ path('empresa_index') }}">Volver al listado.</a>
+   
+{% endblock %}

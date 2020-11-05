@@ -1,0 +1,10 @@
+body{
+	margin: 0 auto;
+	/*position: absolute;*/
+	width: 1200px;
+}
+.principal,.tabla_principal{
+	margin-top: 50px;
+	text-align: center;
+}
+

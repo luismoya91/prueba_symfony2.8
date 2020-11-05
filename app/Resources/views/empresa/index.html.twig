@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+            <h1>Listado de Empresas</h1>
+                <table class="table table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Nit</th>
+                            <th>Fecha Creacion</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for empresa in empresas %}
+                        <tr>
+                            <td><a class="btn btn-default" href="{{ path('empresa_show', { 'id': empresa.id }) }}">{{ empresa.id }}</a></td>
+                            <td>{{ empresa.nombre }}</td>
+                            <td>{{ empresa.nit }}</td>
+                            <td>{% if empresa.fechaCreacion %}{{ empresa.fechaCreacion|date('Y-m-d') }}{% endif %}</td>
+                            <td>
+                                <a class="btn btn-default" href="{{ path('empresa_show', { 'id': empresa.id }) }}">Mostrar</a>
+                                <a class="btn btn-danger" href="./edit/{{ empresa.id }}">Editar</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            <div>
+                <a class="btn btn-success" href="{{ path('empresa_new') }}">Crear una Nueva Empresa</a>
+                <a class="btn btn-default" href="{{ path('index') }}">Volver</a>
+            </div>
+            
+{% endblock %}

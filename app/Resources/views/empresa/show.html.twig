@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+            <h1>Empresa</h1>
+
+            <table class="table table-hover table-responsive">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ empresa.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ empresa.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nit</th>
+                        <td>{{ empresa.nit }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fechacreacion</th>
+                        <td>{% if empresa.fechaCreacion %}{{ empresa.fechaCreacion|date('Y-m-d') }}{% endif %}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="{{ path('empresa_index') }}">Volver al listado</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="/edit/{{empresa.id}}">Editar</a>
+                </div>
+                <div class="col-sm-2">
+                    {{ form_start(delete_form) }}
+                        <input class="btn btn-danger" type="submit" value="Borrar">
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+{% endblock %}

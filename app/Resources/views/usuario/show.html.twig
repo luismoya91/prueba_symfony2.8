@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usuario</h1>
+
+    <table class="table table-hover table-responsive">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ usuario.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ usuario.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ usuario.empresa }}</td>
+            </tr>
+             <tr>
+                <th>Pass</th>
+                <td>{{ usuario.pass }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+                <div class="col-sm-2">
+                    <a href="{{ path('usuario_index') }}">Volver al listado</a>
+                </div>
+                <div class="col-sm-2">
+                    <a href="{{ path('usuario_edit', { 'id': usuario.id }) }}">Editar</a>
+                </div>
+                <div class="col-sm-2">
+                    {{ form_start(delete_form) }}
+                        <input class="btn btn-danger" type="submit" value="Borrar">
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+{% endblock %}

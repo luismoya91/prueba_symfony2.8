@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+            <h1>Editar Empresa</h1>
+            {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                
+            {{ form_end(edit_form) }}
+            <div class="row" style="margin-top:25px;">
+
+                <div class="col-md-2">
+                   {{ form_start(edit_form) }}
+                        <input class="btn btn-success" type="submit" value="Editar" />
+                    {{ form_end(edit_form) }}
+                </div>
+                <div class="col-md-2"> 
+                    <a href="{{ path('empresa_index') }}">Volver al Listado</a>    
+                </div>    
+            </div>
+{% endblock %}
